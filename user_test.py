@@ -1,18 +1,31 @@
-from collections import UserString
-from os import uname
-import unittest
-from main import users
 
-class testAccount(unittest.TestCase):
+import unittest
+from users import User
+
+class TestUser(unittest.TestCase):
    def setUp(self):
-       self.new_user=users("waimina", "1234567")
+       self.new_user=User("waimina", "1234567")
        
 def __init__(self):
          self.assertEqual(self.new_user.username,"waimana")
-         self.assertEqual(self.new_user.paasword,"1234567")
+         self.assertEqual(self.new_user.password,"1234567")
+      
       
     
-
+def test_self_user(self):
+    self.new_user.save_user()
+    self.assertEqual(len(User.user_list),1)
+    
+def setUp(self):
+    self.new_user=User("haimana", "987456")
+    
+def test_inti(self):
+    self.assertEqual(self.new_user.username,"haimana")
+    self.assertEqual(self.new_user.password,"987456")
+    
+if __name__=='__main__':
+    unittest.main()
+    
 # user_have_an_account=input("do you have an existing account? ")
 
 
