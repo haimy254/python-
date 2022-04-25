@@ -23,10 +23,15 @@ class test_users(unittest.TestCase):
         test_user = User("Test", "user",)
         test_user.save_user()
         self.assertEqual(len(User.user_list),2)
-     
-    
+            
+    def test_delete_user(self):
+        self.new_user.save_user()
+        test_user= User("test", "user")
+        test_user.save_user()
+        self.new_user.delete_user()
+        self.assertEqual(len(User.user_list),1)
            
-        
+      
     
     
 if __name__=='__main__':
