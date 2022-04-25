@@ -30,6 +30,7 @@ class test_users(unittest.TestCase):
         test_user.save_user()
         self.new_user.delete_user()
         self.assertEqual(len(User.user_list),1)
+     
            
       
     
