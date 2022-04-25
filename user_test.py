@@ -1,27 +1,42 @@
-
 import unittest
+# import pyperclip
 from users import User
 
-class TestUser(unittest.TestCase):
-   def setUp(self):
-       self.new_user=User("waimina", "1234567")
-       
+def setUp(self):
+    self.new_user=User("waimina","1234567")
+
 def __init__(self):
          self.assertEqual(self.new_user.username,"waimana")
          self.assertEqual(self.new_user.password,"1234567")
       
+def test_init(self):
+    User.user_list=[] 
+    
+    print("good")
+# def setUp(self):
+#     self.new_user=User("haimana", "987456")
+    
+# def test_inti(self):
+#     self.assertEqual(self.new_user.username,"haimana")
+#     self.assertEqual(self.new_user.password,"987456")
+    
+    
+#          print("Do you have an account")
       
+# input =user(YES ="login"),( NO = "create new account")
+         
+# if not YES:
+#     print("login in your account")
     
-def test_self_user(self):
-    self.new_user.save_user()
-    self.assertEqual(len(User.user_list),1)
-    
-def setUp(self):
-    self.new_user=User("haimana", "987456")
-    
-def test_inti(self):
-    self.assertEqual(self.new_user.username,"haimana")
-    self.assertEqual(self.new_user.password,"987456")
+# else:
+#     print("create new account")
+# def create_new_account(self,username, password):
+#     self.username= username
+#     self.password= password
+#     return
+# def test_self_user(self):
+#     self.new_user.save_user()
+#     self.assertEqual(len(User.user_list),1)
     
 if __name__=='__main__':
     unittest.main()
