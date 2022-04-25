@@ -12,7 +12,10 @@ def __init__(self):
 def test_init(self):
     User.user_list=[] 
     
-    print("good")
+if __name__=='__main__':
+    unittest.main()
+    
+    # print("good")
 # def setUp(self):
 #     self.new_user=User("haimana", "987456")
     
@@ -38,8 +41,7 @@ def test_init(self):
 #     self.new_user.save_user()
 #     self.assertEqual(len(User.user_list),1)
     
-if __name__=='__main__':
-    unittest.main()
+
     
 # user_have_an_account=input("do you have an existing account? ")
 
