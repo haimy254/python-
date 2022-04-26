@@ -56,7 +56,7 @@ class test_users(unittest.TestCase):
         '''
 
         self.new_user.save_user()
-        test_user = User("waimina","1234567") # new contact
+        test_user = User("waimina","1234567") # new user
         test_user.save_user()
 
         found_user = User.find_by_username("waimina")
