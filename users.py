@@ -26,7 +26,7 @@ class User:
              '''
 
       for user in cls.user_list:
-          if user.username==password:
+          if user.password==password:
               return True
           
     @classmethod
