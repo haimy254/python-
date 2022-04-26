@@ -2,6 +2,8 @@
 
 from users import User
 
+from credentials import Credentials 
+
 def create_user(username,password):
     '''
     Function to create a new user
@@ -39,4 +41,16 @@ def display_user():
     '''
     return User.display_user()
 
+def create_credentials(account,username,password):
+    '''
+    Function to create a new credentials
+    '''
+    new_credentials = Credentials(account,username,password)
+    return new_credentials
+
+def save_credentials(credentials):
+    '''
+    Function to save credentials
+    '''
+    credentials.save_credentials()
 
