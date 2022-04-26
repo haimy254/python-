@@ -1,14 +1,9 @@
-import unittest #importing the unittest module f
+import unittest #importing the unittest module 
 
 from credentials import Credentials #importing the credentials class
 
 class test_credentials(unittest.TestCase):
-    '''
-    Test class that defines test cases for the credentials class behaviours.
-
-    Args:
-        unittest.TestCase: TestCase class that helps in creating test cases
-    '''
+  
     def setUp(self):
         '''
         Set up method to run before each test cases.
@@ -27,5 +22,16 @@ class test_credentials(unittest.TestCase):
         self.new_credentials.save_credentials()
         self.assertEqual(len(Credentials.credentials_list),1)
         
-    if __name__==('__main__'):
+    def tearDown(self):
+        Credentials.credentials_list=[] 
+        
+    def test_save_multiple_credentials(self):
+        self.new_credentials.save_credentials()
+        test_credentials= Credentials("qare","uta","098765")
+        test_credentials.save_credentials()
+        self.assertEqual(len(Credentials.credentials_list),2)
+        
+    
+        
+if __name__==('__main__'):
          unittest.main()   
