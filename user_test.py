@@ -5,9 +5,15 @@ from users import User
 class test_users(unittest.TestCase):
 
     def setUp(self):
+        '''
+        Set up method to run before each test cases.
+        '''
         self.new_user=User("waimina","1234567")
 
     def test_init(self):
+        '''
+        test_init test case to test if the object is initialized properly
+        '''
         self.assertEqual(self.new_user.username,"waimina")
         self.assertEqual(self.new_user.password,"1234567")
         
@@ -46,7 +52,7 @@ class test_users(unittest.TestCase):
       
     def test_find_user_by_username(self):
         '''
-        test to check if we can find a user by account and display information
+        test to check if we can find a user by username and display information
         '''
 
         self.new_user.save_user()
@@ -57,7 +63,13 @@ class test_users(unittest.TestCase):
 
         self.assertEqual(found_user.username,test_user.username)
  
-    
+    def test_display_all_user(self):
+        '''
+        method that returns a list of all user saved
+        '''
+
+        self.assertEqual(User.display_user(),User.user_list)
+
     
 if __name__=='__main__':
         unittest.main()
