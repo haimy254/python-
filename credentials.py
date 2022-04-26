@@ -1,5 +1,8 @@
+from users import User
 class Credentials:
-    
+    '''
+    class that generates new instaces of user credentials of their accounts
+    '''
     
     pass
     credentials_list=[]   
