@@ -32,3 +32,11 @@ def check_existing_user(username):
     Function that check if a contact exists with that number and return a Boolean
     '''
     return User.user_exist(username)
+
+def display_user():
+    '''
+    Function that returns all the saved user
+    '''
+    return User.display_user()
+
+
