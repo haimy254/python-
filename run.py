@@ -85,7 +85,7 @@ def main():
     print('\n')
     
     while True:
-        print ("use the following short codes:cc- create a new account,dc- display account,dac- display accounts credentials,fc- find an account,cnc-create new credential,fac-find account credentials, ex- exit the account list")
+        print ("use the following short codes:cc- create a new account,dc- display account,fc- find an account,ex- exit the account list")
         short_code =input().lower()
         
         if short_code=='cc':
