@@ -85,7 +85,7 @@ def main():
     print('\n')
     
     while True:
-        print ("use the following short codes:cc- create a new account,dc- display account, fc- find an account, ex- exit the account list")
+        print ("use the following short codes:cc- create a new account,dc- display account,dac- display accounts credentials,fc- find an account,cnc-create new credential,fac-find account credentials, ex- exit the account list")
         short_code =input().lower()
         
         if short_code=='cc':
@@ -109,7 +109,7 @@ def main():
              print('\n')
 
         for user in display_user():
-            print(f"{user.username},{user.username}")
+            print(f"{user.username},{user.password}")
             print('\n')
             
         else: 
@@ -130,13 +130,63 @@ def main():
         
         else:
         print("That account does not exist")
+        print('\n')
+        
+        elif short_code=='cnc':
+        if save_credentials():
+          print("New credentials")
+        print ("-"*10)
+            
+        print("account name......")
+        account=input()
+        print("username......")
+        username=input()
+            
+        print("password......")
+        password=input()
+            
+        save_user(create_user(account,username,password))# create and save new user 
+        print ('\n')
+        print (f"New Account {account}{username}{password} created")
+        print ('\n')
+        
+        elif short_code == 'fac':
+        print("Enter the account credentials you want to search for")
+        search_account = input()
+        if check_existing_user(search_account):
+            
+         search_account = find_credentials(search_account)
+        print(f"{search_account.account}")
+        print('-' * 20)
+
+        print(f"account.......{search_account.account}")
+        
+        elif short_code == 'dac':
+        if display_user():
+             print("Here is a list of all your credentials")
+             print('\n')
+
+        for credentials in display_credentials():
+            print(f"{credentials.account},{credentials.username},{credentials.password}")
+            print('\n')
+            
+        else: 
+            print('\n')
+            print("You dont seem to have any account credentials saved yet")
+            print('\n')
+        
+        else:
+        print("That account does not exist")
+        print('\n')
         
         elif short_code == "ex":
         print("Bye and have a lovely day .......")
-        break
-        # else:
-        # print("I really didn't get that. Please use the short codes")
         
+        else:
+        print("I really didn't get that. Please use the short codes")
         
+        if __name__ == '__main__':
+               main()
+
         
             
