@@ -77,3 +77,17 @@ def display_credentials():
     Function that returns all the saved credentials
     '''
     return Credentials.display_credentials()
+
+def main():
+    print("Hey welcome to your account list. what is your name?")
+    username = input()
+    print(f"Hey {username}. How can help?")
+    print('\n')
+    while True:
+        print ("use the following short codes:cc- create a new account,dc- display account, fc- find an account, ex- exit the account list")
+        short_code =input().lower()
+        if short_code=='cc':
+            print("New Account")
+            print ("-"*10)
+            print("username......")
+            username=input()
