@@ -77,17 +77,66 @@ def display_credentials():
     Function that returns all the saved credentials
     '''
     return Credentials.display_credentials()
-
+# password:str
 def main():
     print("Hey welcome to your account list. what is your name?")
     username = input()
     print(f"Hey {username}. How can help?")
     print('\n')
+    
     while True:
         print ("use the following short codes:cc- create a new account,dc- display account, fc- find an account, ex- exit the account list")
         short_code =input().lower()
+        
         if short_code=='cc':
             print("New Account")
             print ("-"*10)
+            
             print("username......")
             username=input()
+            
+            print("password......")
+            password=input()
+            
+        save_user(create_user(username,password))# create and save new user 
+        print ('\n')
+        print (f"New Account {username}{password} created")
+        print ('\n')
+            
+        elif short_code == 'dc':
+        if display_user():
+             print("Here is a list of all your accounts")
+             print('\n')
+
+        for user in display_user():
+            print(f"{user.username},{user.username}")
+            print('\n')
+            
+        else: 
+            print('\n')
+            print("You dont seem to have any accounts saved yet")
+            print('\n')
+        
+        elif short_code == 'fc':
+        print("Enter the account you want to search for")
+        search_username = input()
+        if check_existing_user(search_username):
+            
+         search_username = find_user(search_username)
+        print(f"{search_username.username}")
+        print('-' * 20)
+
+        print(f"account.......{search_username.username}")
+        
+        else:
+        print("That account does not exist")
+        
+        elif short_code == "ex":
+        print("Bye and have a lovely day .......")
+        break
+        # else:
+        # print("I really didn't get that. Please use the short codes")
+        
+        
+        
+            
