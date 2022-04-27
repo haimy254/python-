@@ -118,7 +118,7 @@ def main():
                 print('\n')
         
         elif short_code == 'fc':
-            print("Enter the account you want to search for")
+            print("Enter the username you want to search for")
             search_username = input()
             if check_existing_user(search_username):
             
@@ -132,55 +132,55 @@ def main():
                 print("That account does not exist")
                 print('\n')
         
-        elif short_code=='cnc':
-            if save_credentials():
-               print("New credentials")
-               print ("-"*10)
+        # elif short_code=='cnc':
+        #     if create_credentials(account,username,password):
+        #        print("New credentials")
+        #        print ("-"*10)
             
-               print("account name......")
-               account=input()
-               print("username......")
-               username=input()
+        #        print("account name......")
+        #        account=input()
+        #        print("username......")
+        #        username=input()
             
-               print("password......")
-               password=input()
+        #        print("password......")
+        #        password=input()
             
-               save_user(create_user(account,username,password))# create and save new user 
-               print ('\n')
-               print (f"New Account {account}{username}{password} created")
-               print ('\n')
+        #        save_credentials(create_credentials(account,username,password))# create and save new credentials
+        #        print ('\n')
+        #        print (f"New credentials {account}{username}{password} created")
+        #        print ('\n')
         
-        elif short_code == 'fac':
-            print("Enter the account credentials you want to search for")
-            search_account = input()
-            if check_existing_user(search_account):
+        # elif short_code == 'fac':
+        #     print("Enter the account credentials you want to search for")
+        #     search_account = input()
+        #     if check_existing_user(search_account):
             
-                search_account = find_credentials(search_account)
-                print(f"{search_account.account}")
-                print('-' * 20)
+        #         search_account = find_credentials(search_account)
+        #         print(f"{search_account.account}")
+        #         print('-' * 20)
 
-                print(f"account.......{search_account.account}")
+        #         print(f"account.......{search_account.account}")
         
-        elif short_code == 'dac':
-            if display_user():
-                print("Here is a list of all your credentials")
-                print('\n')
+        # elif short_code == 'dac':
+        #     if display_user():
+        #         print("Here is a list of all your credentials")
+        #         print('\n')
 
-                for credentials in display_credentials():
-                    print(f"{credentials.account},{credentials.username},{credentials.password}")
-                    print('\n')
+        #         for credentials in display_credentials():
+        #             print(f"{credentials.account},{credentials.username},{credentials.password}")
+        #             print('\n')
             
-            else: 
-                print('\n')
-                print("You dont seem to have any account credentials saved yet")
-                print('\n')
+        # else: 
+        #         print('\n')
+        #         print("You dont seem to have any account credentials saved yet")
+        #         print('\n')
         
         #     else:
         #         print("That account does not exist")
         # print('\n')
         
         elif short_code == "ex":
-            print("Bye and have a lovely day .......")
+                print("Bye and have a lovely day .......")
         
         else:
             print("I really didn't get that. Please use the short codes")
